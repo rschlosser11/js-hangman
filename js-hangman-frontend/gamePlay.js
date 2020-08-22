@@ -60,7 +60,13 @@ class GamePlay {
             this.lives.innerHTML = 'Game Over!'
             this.drawHangman(0)
             this.newGame.classList.remove('hidden')
+            this.disableAllLetters()
         }
+    }
+
+    disableAllLetters() {
+        let letters = document.getElementsByClassName('alphabet-letter')
+        Array.from(letters).map(btn => btn.disabled = true)
     }
 
     drawHangman = (lives) => {
@@ -111,6 +117,7 @@ class GamePlay {
         if (Word.wordComplete()) {
             this.lives.innerText = 'YOU WON!'
             this.newGame.classList.remove('hidden')
+            this.disableAllLetters();
         }
     }
 }
