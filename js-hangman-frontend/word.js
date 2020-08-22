@@ -10,7 +10,7 @@ class Word {
     }
 
     static selectWord(words) {
-        let num = Math.floor(Math.random() * (words.length - 1) + 1);
+        let num = Math.floor(Math.random() * (words.length + 1));
         for (let i = 0; i < words.length; i++) {
             if (i === num - 1) {
                 Word.chosenWord = words[i];
